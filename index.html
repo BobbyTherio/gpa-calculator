@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        // Grades is an array of grade letters
+        function computeGPA(grades){
+            var sum = 0; // Summing the numeric grade
+
+            // Convert grade to number based on table from the question and add to sum variable.
+            for(var i =0; i < grades.length; i++){
+                var grade = grades[i]; //One item from array
+
+                if(grade === "A"){
+                    sum += 100;
+                }
+                else if(grade == "B"){
+                    sum += 80;
+                }
+                else if(grade == "C"){
+                    sum += 70;
+                }
+            }
+
+            // Calculate average grade
+            var gpa = sum / grades.length; 
+
+            //Convert gpa to letter grade
+            var result = "";
+            if(gpa === 100){
+                result = "A";
+            }
+            else if (gpa >= 80 && gpa <= 99){
+                result = "B";
+            }
+            else {
+                result = "C";
+            }
+
+            //Print result
+            console.log('Your GPA is ', result);
+            document.write('Your GPA is ' + result)
+        }
+
+        var myGrades = ["A", "A", "B", "C"];
+        computeGPA(myGrades);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
